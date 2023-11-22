@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>学生証表</title>
+  <link rel="stylesheet" href="/dist/output.css">
+</head>
+<body>
+  <main class="bg-blue-200 m-5 rounded-md p-2">
+    <div class="flex justify-center">
+      <div>
+          <img src="./img/oca-logo.png" alt="ロゴ" width="50">
+          <p class="text-xs -ml-3">
+            下記の者は本校の<br>
+            学生であることを<br>
+            証明する
+          </p>
+          <div class="border-2 border-black p-2 w-14 h-16 bg-white mt-2">
+              <label >
+                  <span class="filelabel" >
+                    <img src="./img/user-plus-icon.png" alt="アイコン画像" id="file-preview" class="m-auto align-middle">
+                  </span>
+                  <input type="file" name="datafile" id="filesend" multiple accept=".jpg,.gif,.png,image/gif,image/jpeg,image/png" class="hidden">
+              </label>
+          </div>
+
+          <div class="mt-2 -ml-3">
+            <img src="./img/sdesign.png" alt="" class="bg-white p-2">
+          </div>
+      </div>
+      <div class="space-x-4">
+        <div class="text-center space-y-1 ml-6">
+          <p class="text-right text-xs">
+            学籍番号 00-0000-0000
+          </p>
+          <h3 class="font-bold">学生証</h3>
+          <div class="ml-6">
+            <dl class="flex text-sm">
+              <dt class="mr-2">学　　科</dt>
+              <dd>スーパーゲームIT科</dd>
+            </dl>
+            <dl class="flex text-sm">
+              <dt class="mr-2">専　　攻</dt>
+              <dd>ホワイトハッカー専攻</dd>
+            </dl>
+            <dl class="flex text-sm">
+              <dt class="mr-2">氏　　名</dt>
+              <dd>○○　○○</dd>
+            </dl>
+            <dl class="flex text-sm">
+              <dt class="mr-2">生年月日</dt>
+              <dd>2002年12月9日</dd>
+            </dl>
+            <dl class="flex text-xs my-2">
+              <dt class="mr-2">発  行  日</dt>
+              <dd>2023年4月1日</dd>
+            </dl>
+            <dl class="flex text-base border border-black w-40 px-1 mt-2">
+              <dt class="mr-2">有効期限</dt>
+              <dd>2025年3月31日</dd>
+            </dl>
+          </div>
+        </div>
+          
+          <div class="text-right text-xs mt-2">
+            <p>〒550-0014大阪市西区北堀江2丁目4番の6号</p>
+            <p>学校法人コミュニケーションアート</p>
+            <p class="text-sm">OCA大阪デザイン＆テクノロジー専門学校</p>
+            <p>学校長　篠塚　正典</p>
+          </div>
+      </div>
+    </div>
+  </main>
+  <script>
+      document.getElementById('filesend').addEventListener('change', function (e) {
+          // 1枚だけ表示する
+          var file = e.target.files[0];
+
+          // ファイルのブラウザ上でのURLを取得する
+          var blobUrl = window.URL.createObjectURL(file);
+
+          // img要素に表示
+          var img = document.getElementById('file-preview');
+          img.src = blobUrl;
+      });
+  </script>
+</body>
+</html>
